@@ -12,7 +12,7 @@ public class Stream3 {
         integers.stream().map(function).forEach(System.out::println);
 
         String str = "Hello";
-        int i = 5;
+        int i = 10;
         System.out.println(str.charAt(i));
 
         Integer integer = 10;
