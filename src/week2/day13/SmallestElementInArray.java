@@ -6,7 +6,7 @@ public class SmallestElementInArray {
         int smallest = arr[0];
 
         for (Integer i : arr){
-            if (i > smallest) // 4 > 2
+            if (i < smallest) // 4 > 2
                 smallest = i;
         }
         System.out.println(smallest);
