@@ -14,6 +14,7 @@ public class CountDuplicate {
             map.compute(c, (k, v) -> v == null ? 1 : ++v);
         }
         System.out.println(map);
+        System.out.println("-------------------------------------");
 
         int n = 100;
         if (n <= 10)
