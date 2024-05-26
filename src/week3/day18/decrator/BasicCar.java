@@ -1,0 +1,14 @@
+package week3.day18.decrator;
+
+public class BasicCar implements Car {
+
+    public BasicCar(){
+
+    }
+
+    @Override
+    public void assemble() {
+        System.out.print("Basic Car.");
+    }
+
+}
