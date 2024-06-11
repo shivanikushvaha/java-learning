@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Main2 {
+public class Question2My {
     public static void main(String[] args) {
-        int[] skills = {11,13};
+        int[] skills = {11, 13};
         int k = 164383266;
         int winningPlayer = findWinningPlayer(skills, k);
         System.out.println(winningPlayer);
@@ -21,7 +21,7 @@ public class Main2 {
         List<Integer> list = new ArrayList<>();
 
         if (k >= n) {
-            
+
         }
 
         for (int y : skills) {
@@ -38,8 +38,7 @@ public class Main2 {
 
             if (skills[0] == max) {
                 temp = skills[1];
-            }
-            else {
+            } else {
                 temp = skills[0];
                 skills[0] = skills[1];
             }
