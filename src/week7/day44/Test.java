@@ -1,16 +1,14 @@
 package week7.day44;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.addFirst(10);
-        list.set(0, 100);
-        System.out.println(list);
-
-        int[] arr = {1, 2, 3, 45};
+        String str = "test";
+        String replace = str.replace('t', 'o');
+        System.out.println(replace);
     }
+
 }
