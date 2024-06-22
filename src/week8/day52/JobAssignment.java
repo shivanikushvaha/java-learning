@@ -5,13 +5,14 @@ import java.util.Arrays;
 public class JobAssignment {
     public static void main(String[] args) {
         int[] difficulty = {2, 4, 6, 8, 10};
+        int[] profit = {10, 20, 30, 40, 50};
         int[] worker = {4, 5, 6, 7};
 
-        int[] result = maxProfitAssignment(difficulty, worker);
+        int[] result = maxProfitAssignment(difficulty, worker, profit);
         System.out.println(Arrays.toString(result));
     }
 
-    public static int[] maxProfitAssignment(int[] difficulty, int[] worker) {
+    public static int[] maxProfitAssignment(int[] difficulty, int[] worker, int[] profit) {
         Arrays.sort(difficulty);
         Arrays.sort(worker);
 
