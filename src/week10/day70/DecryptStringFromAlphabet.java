@@ -8,6 +8,6 @@ public class DecryptStringFromAlphabet {
     }
 
     public static String freqAlphabets(String s) {
-
+        return "";
     }
 }
