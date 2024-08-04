@@ -1,6 +1,8 @@
 package week13.day90;
 
 import java.util.Arrays;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class RemoveDuplicate {
     public static void main(String[] args) {
@@ -10,16 +12,16 @@ public class RemoveDuplicate {
     }
 
     public static int removeDuplicates(int[] nums) {
-        int n = nums.length;
+        SortedSet<Integer> sortedSet = new TreeSet<>();
 
-        for (int i = 0; i < n - 1; i++) {
-            if (nums[i] == nums[i + 1]) {
-                nums[i] = 200;
-                n--;
-            }
+        for (int num : nums)
+            sortedSet.add(num);
+
+        int i = 0;
+        for(int z : sortedSet) {
+            nums[i++] = z;
         }
 
-        System.out.println(Arrays.toString(nums));
-        return 0;
+        return sortedSet.size();
     }
 }
