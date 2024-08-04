@@ -1,48 +1,56 @@
-package week13.day88;
+package week13.day90;
+
+import week13.day88.IntegerMax;
 
 import java.util.Arrays;
 
-public class OneDArray {
+public class OnentwoDarray {
     public static void main(String[] args) {
-        int[] arr = new int[5];
+        int[] arr = new int[10];
 
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = -1;
+            arr[i] = 10;
 
             System.out.print(arr[i] + " ");
+
+            Arrays.fill(arr, Integer.MAX_VALUE);
+            System.out.print(arr[i]);
         }
         System.out.println();
-        Arrays.fill(arr, Integer.MAX_VALUE);
-        System.out.println(arr[0]);
-        System.out.println(arr[1]);
 
+        System.out.println("===================");
 
-        int[][] arr2 = new int[3][4];
-        int r = arr2.length;
-        int c = arr2[0].length;
+        int[][] arr1 = new int[3][4];
+        int r = arr1.length;
+        int c = arr1[0].length;
+
 
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
-                arr2[i][j] = -1;
+                arr1[i][j] = 10;
             }
         }
 
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
-                System.out.print(arr2[i][j] + " ");
+
+                System.out.print(arr1[i][j] + " ");
             }
             System.out.println();
         }
-        System.out.println("======================================");
-        for (int[] a : arr2) {
+
+        System.out.println("=================");
+
+        for (int[] a : arr1) {
             Arrays.fill(a, Integer.MIN_VALUE);
         }
 
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
-                System.out.print(arr2[i][j] + " ");
+                System.out.print(arr1[i][j] + " ");
             }
             System.out.println();
         }
     }
 }
+

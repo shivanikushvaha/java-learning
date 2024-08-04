@@ -6,8 +6,8 @@ import java.util.Queue;
 
 public class PriorityQueueTest {
     public static void main(String[] args) {
-        Queue<Integer> queue = new PriorityQueue<>((x, y) -> Integer.compare(y, x));
-//        Queue<Integer> queue1 = new PriorityQueue<>(Collections.reverseOrder());
+        Queue<Integer> queue = new PriorityQueue<>();
+        Queue<Integer> queue1 = new PriorityQueue<>(Collections.reverseOrder());
         queue.add(10);
         queue.add(100);
         queue.add(1);
