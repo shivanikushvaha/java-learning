@@ -1,23 +1,38 @@
 package week14.day97;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class MissingAndRepeating {
     public static void main(String[] args) {
-        int[] arr = {13, 33, 43, 16, 25, 19, 23, 31, 29, 35, 10, 2, 32, 11, 47, 15, 34, 46, 30, 26, 41, 18, 5, 17, 37, 39, 6, 4, 20, 27, 9, 3, 8, 40, 24, 44, 14, 36, 7, 38, 12, 1, 42, 12, 28, 22, 45};
-        int[] twoElement = findTwoElement(arr, 3);
+        int[] arr = {12, 7, 5, 1, 13, 1, 10, 8, 11, 9, 2, 4, 3, 6};
+        int n = arr.length;
+        int[] twoElement = findTwoElement(arr, n);
         System.out.println(Arrays.toString(twoElement));
     }
 
     public static int[] findTwoElement(int arr[], int n) {
-        Arrays.sort(arr);
-        int missing = 0;
-        int repeat = 0;
-        for (int i = 0; i < n - 1; i++) {
-            if (!(arr[i] == arr[i] + 1)) missing = arr[i] + 1;
-            if (arr[i] == arr[i + 1]) repeat = arr[i];
+        int repeat = -1;
+        int missing = -1;
+        SortedMap<Integer, Integer> map = new TreeMap<>();
+
+        for (int num : arr)
+            map.put(num, map.getOrDefault(num, 0) + 1);
+
+        int i = 1;
+        for (Map.Entry<Integer, Integer> m : map.entrySet()) {
+            if (m.getValue() == 2) repeat = m.getKey();
+
+            if (m.getKey() != i) {
+                missing = m.getKey() - 1;
+                i++;
+            }
+            i++;
         }
 
+        if (missing == -1) missing = map.size() + 1;
         return new int[]{repeat, missing};
     }
 }
