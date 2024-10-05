@@ -1,6 +1,4 @@
-package week14.day102;
-
-import java.util.List;
+package week15.day101;
 
 public class PalindromeLinkedList {
     public static void main(String[] args) {

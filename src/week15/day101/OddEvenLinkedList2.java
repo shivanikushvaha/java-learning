@@ -1,16 +1,16 @@
-package week14.day102;
+package week15.day101;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class OddEvenLinkedList {
+public class OddEvenLinkedList2 {
     public static void main(String[] args) {
 
     }
 
-    public ListNode oddEvenList(ListNode head) {
+    public OddEvenLinkedList.ListNode oddEvenList(OddEvenLinkedList.ListNode head) {
         List<Integer> list = new ArrayList<>();
-        ListNode current = head;
+        OddEvenLinkedList.ListNode current = head;
 
         while (current != null) {
             list.add(current.val);
@@ -37,7 +37,7 @@ public class OddEvenLinkedList {
 
     static class ListNode {
         int val;
-        ListNode next;
+        OddEvenLinkedList.ListNode next;
 
         ListNode(int x) {
             val = x;

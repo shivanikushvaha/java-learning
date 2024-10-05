@@ -1,4 +1,4 @@
-package week14.day100;
+package week15.day100;
 
 public class MiddleOfTheLinkedList {
     static ListNode head;
