@@ -1,4 +1,4 @@
-package week14.day98;
+package week14.day99;
 
 public class DoublyLinkedList {
     static Node head;
@@ -9,23 +9,66 @@ public class DoublyLinkedList {
         insertAtEnd(5);
         insertAtEnd(6);
         insertAtPosition(60, 1);
-
+        deleteAtEnd();
         print();
+        deleteAtEnd();
+    }
+
+    public static void deleteAtBegin() {
+        Node current = head;
+
+        head = head.next;
+        if (head != null) {
+            head.prev = null;
+        }
+    }
+
+    public static void deleteAtEnd() {
+        Node current = head;
+
+        while (current.next != null) {
+            current = current.next;
+        }
+
+        if (current.prev != null) {
+            current.prev.next = null;
+        }
+    }
+
+    public static void deleteAtPosition(int p) {
+
+        Node current = head;
+
+        for (int i = 0; i < p - 1 && current != null; i++) {
+            current = current.next;
+        }
+
+        if (current.prev != null) {
+            current.prev.next = current.next;
+        }
+        if (current.next != null) {
+            current.next.prev = current.prev;
+        }
+
+        if (head == current)
+            head = current.next;
+
     }
 
     public static void insertAtPosition(int x, int p) {
         Node curr = head;
         Node newNode = new Node(x);
-        Node prevNode = null;
 
-        for (int i = 0; i < p; i++) {
-            prevNode = curr;
+        for (int i = 0; i < p && curr != null; i++) {
             curr = curr.next;
         }
-        prevNode.next = newNode;
-        newNode.prev = prevNode;
-        newNode.next = curr.prev;
-        curr.prev = newNode;
+        newNode.prev = curr;
+        newNode.next = curr.next;
+        curr.next = newNode;
+
+        if (newNode.next != null) {
+            newNode.next.prev = newNode;
+        }
     }
 
     public static void print() {
